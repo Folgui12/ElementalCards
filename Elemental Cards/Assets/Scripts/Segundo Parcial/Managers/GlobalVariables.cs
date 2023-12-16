@@ -24,7 +24,7 @@ public class GlobalVariables : MonoBehaviour
             Destroy(gameObject);
         }
         DontDestroyOnLoad(gameObject);
-    }
+    } 
 
     private void Start()
     {
@@ -43,7 +43,6 @@ public class GlobalVariables : MonoBehaviour
             {
                 if (!activeEnemies[i])
                 {
-                    Debug.Log("Enemigo Borrado");  
                     Destroy(currentEnemies[i].gameObject);
                     break;
                 }
