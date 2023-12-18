@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GlobalVariables : MonoBehaviour
 {
@@ -9,9 +10,10 @@ public class GlobalVariables : MonoBehaviour
     public static bool check;
     public static int id;
     public static int confrontedEnemies = 0;
+    public static int enemiesKilled = 0;
+    public static string playerName;
     public static int deactivatedAreas = 0;
-    public List<EnemyController> currentEnemies = new List<EnemyController>();
-    public bool[] activeEnemies = {true, true, true, true, true, true , true, true, true, true};
+    public List<string> enemiesTags = new List<string>();
 
     private void Awake()
     {
@@ -23,12 +25,13 @@ public class GlobalVariables : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
         DontDestroyOnLoad(gameObject);
     } 
 
     private void Start()
     {
-        EraseEnemies();
+
     }
 
     void Update()
@@ -39,23 +42,34 @@ public class GlobalVariables : MonoBehaviour
     public void EraseEnemies()
     {
         if (confrontedEnemies > 0)
-            for (int i = 0; i < activeEnemies.Length; i++)
+            for (int i = 0; i < enemiesTags.Count; i++)
             {
-                if (!activeEnemies[i])
+                for(int j = 0; j < enemiesTags.Count; j++)
                 {
-                    Destroy(currentEnemies[i].gameObject);
-                    break;
+                    GameObject aux = GameObject.FindGameObjectWithTag(enemiesTags[j]);
+                    if (enemiesTags[i] == aux.tag)
+                    {
+                        Destroy(aux);
+                    }
                 }
             }
     }
 
     public void Battle(int ID)
     {
-        activeEnemies[confrontedEnemies] = false;
         confrontedEnemies++;
         if(confrontedEnemies%2 == 0)
             deactivatedAreas++;
         id = ID;
         SceneManager.LoadScene(2);
+    }
+
+    public void Restore()
+    {
+        Debug.Log("Restoring");
+        confrontedEnemies = 0;
+        enemiesKilled = 0;
+        deactivatedAreas = 0;
+        enemiesTags.Clear();
     }
 }

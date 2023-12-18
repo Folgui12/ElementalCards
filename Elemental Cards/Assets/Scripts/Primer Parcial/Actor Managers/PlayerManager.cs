@@ -119,7 +119,7 @@ public class PlayerManager : Actor, IListener
 
     public override void Die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
         ScreenManager.Instance.PlayerLose();
     }
 }

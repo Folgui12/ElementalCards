@@ -36,24 +36,22 @@ public class EnemyStack : MonoBehaviour, IPila
     {
         for (int i = 0; i < GlobalVariables.confrontedEnemies; i++)
         {
-            if(i < 7)
+            if (GlobalVariables.confrontedEnemies == 0 && i == 0)
             {
-                if (i == 6)
-                {
-                    Push(GlobalVariables.id);
-                }
-                else
-                    Push(Random.Range(0, 4));
+                Push(GlobalVariables.id);
             }
-            
-            //Debug.Log(i);
+            else if (i == GlobalVariables.confrontedEnemies - 1)
+            {
+                Push(GlobalVariables.id);
+            }
+            else
+                Push(Random.Range(0, 4));
         }
             
     }
 
     public void SpawnNextEnemy()
     {
-        Debug.Log(index);
         _enemyFactory.CreateProduct(Peek()).transform.position = spawnPoint.position;
         Pop();
     }

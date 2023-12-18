@@ -3,7 +3,19 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - FDZ1
+  - WMZ1
+  - TZ2
+  - WWZ2
+  - WWZ3
+  - FDZ3
+  - TZ4
+  - WMZ4
+  - FDZ5
+  - TZ5
+  - highScoreEntryContainer
+  - highScoreEntryTemplate
   layers:
   - Default
   - TransparentFX

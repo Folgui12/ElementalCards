@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour
 {
     private GrafoMaker grafo;
     public Nodo nuevoCamino;
-    public GlobalVariables globalVariables;
+    //public GlobalVariables globalVariables;
     public int ID;
     public float speed;
     // Start is called before the first frame update
@@ -32,8 +32,8 @@ public class EnemyController : MonoBehaviour
     {
         if(collision.gameObject.layer == 3)
         {
-            globalVariables.Battle(ID);
-            Destroy(this.transform.parent.gameObject);
+            GlobalVariables.Instance.enemiesTags.Add(this.GetComponentInParent<Transform>().gameObject.tag);
+            GlobalVariables.Instance.Battle(ID);
         }
         
     }

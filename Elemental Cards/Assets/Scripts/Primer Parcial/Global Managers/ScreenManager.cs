@@ -18,9 +18,17 @@ public class ScreenManager: MonoBehaviour
         }
     }
 
-    public void StartGame() => SceneManager.LoadScene(1);
+    public void StartGame()
+    {
+        GlobalVariables.Instance.Restore();
+        SceneManager.LoadScene(1);
+    }
+
+    public void ReturnToMap() => SceneManager.LoadScene(1);
 
     public void GoToMainMenu() => SceneManager.LoadScene(0);
+
+    public void ShowScoreBoard() => SceneManager.LoadScene(5);
 
     public void PlayerLose() => SceneManager.LoadScene(4);
 

@@ -21,6 +21,7 @@ public class AreasController : MonoBehaviour
         InicializarDiccionarioDeZonas();
         InicializarArbol();
         arbolDeZonas.level_Order(raiz, GlobalVariables.deactivatedAreas);
+        GlobalVariables.Instance.EraseEnemies();
     }
 
     // Update is called once per frame

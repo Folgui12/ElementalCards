@@ -5,35 +5,45 @@ using UnityEngine.UI;
 
 public class HighScoreTable : MonoBehaviour
 {
+    public static HighScoreTable Instance;
     private Transform entryContainer;
     private Transform entryTemplate;
-    private List<HighscoreEntry> highscoreEntryList;
-    private List<Transform> highscoreEntryTransformList;  
+    private static List<HighscoreEntry> highscoreEntryList;
+    private static List<Transform> highscoreEntryTransformList;
 
     private void Awake()
     {
-        entryContainer = transform.Find("highScoreEntryContainer");
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
+
+        highscoreEntryList = new List<HighscoreEntry>();
+        entryContainer = GameObject.FindGameObjectWithTag("highScoreEntryContainer").transform;
         entryTemplate = entryContainer.Find("highScoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
 
-        highscoreEntryList = new List<HighscoreEntry>()
-        {
-            new HighscoreEntry{ score = 351351, name = "AAA"},
-            new HighscoreEntry{ score = 651650, name = "BBBB"},
-            new HighscoreEntry{ score = 135418, name = "CC"},
-            new HighscoreEntry{ score = 451350, name = "DDDD"},
-            new HighscoreEntry{ score = 54054, name = "EEE"},
-        };
+        HighscoreEntry newScore = new HighscoreEntry { score = GlobalVariables.enemiesKilled * 10, name = GlobalVariables.playerName };
 
-        highscoreEntryTransformList = new List<Transform>();
+        highscoreEntryList.Add(newScore);
 
         QuickSort(highscoreEntryList, 0, highscoreEntryList.Count - 1);
 
-        for(int i = highscoreEntryList.Count - 1; i >= 0; i--)
+        Debug.Log(highscoreEntryList.Count);
+
+        highscoreEntryTransformList = new List<Transform>();
+
+        for (int i = highscoreEntryList.Count - 1; i >= 0; i--)
         {
             CreateHighscoreEntryTransform(highscoreEntryList[i], entryContainer, highscoreEntryTransformList);
         }
+
+        DontDestroyOnLoad(gameObject);
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry entry, Transform container, List<Transform> transformList)
@@ -76,7 +86,7 @@ public class HighScoreTable : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
-    public void QuickSort(List<HighscoreEntry> entryList, int left, int right)
+    private void QuickSort(List<HighscoreEntry> entryList, int left, int right)
     {
         int pivot;
 
@@ -91,7 +101,7 @@ public class HighScoreTable : MonoBehaviour
         }
     }
 
-    public int Partition(List<HighscoreEntry> entryList, int left, int right)
+    private int Partition(List<HighscoreEntry> entryList, int left, int right)
     {
         int pivot;
         int aux = (left + right) / 2;
@@ -117,8 +127,8 @@ public class HighScoreTable : MonoBehaviour
                 return right;
         }
     }
-
-    public class HighscoreEntry
+    
+    private class HighscoreEntry
     {
         public int score;
         public string name;

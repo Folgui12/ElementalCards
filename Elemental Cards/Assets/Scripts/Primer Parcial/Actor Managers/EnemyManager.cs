@@ -37,12 +37,10 @@ public class EnemyManager : Actor, IListener, IProduct
     {
         if(Weakness == element)
         {
-            Debug.Log("Weak!");
             _stats.CurrentLife -= damage * _extraDamageTakenCauseWeakness;
         }
         else
         {
-            Debug.Log("Resist!");
             _stats.CurrentLife -= damage;
         }
 

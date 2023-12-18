@@ -165,8 +165,8 @@ GameObject:
   m_Component:
   - component: {fileID: 9334952}
   m_Layer: 0
-  m_Name: DragonEnemy (2)
-  m_TagString: Untagged
+  m_Name: FireDragon
+  m_TagString: FDZ5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -186,7 +186,7 @@ Transform:
   - {fileID: 459856631}
   - {fileID: 2136219734}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &22701600
 GameObject:
@@ -593,8 +593,8 @@ GameObject:
   m_Component:
   - component: {fileID: 96669015}
   m_Layer: 0
-  m_Name: TrollEnemy (2)
-  m_TagString: Untagged
+  m_Name: EarthTroll
+  m_TagString: TZ5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -614,7 +614,7 @@ Transform:
   - {fileID: 2058314730}
   - {fileID: 851028881}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &132631277
 GameObject:
@@ -45850,8 +45850,8 @@ GameObject:
   - component: {fileID: 367904570}
   - component: {fileID: 367904569}
   m_Layer: 0
-  m_Name: LightWizard
-  m_TagString: Untagged
+  m_Name: Z3
+  m_TagString: WWZ3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45910,7 +45910,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 1962377183}
-  globalVariables: {fileID: 991172497}
   ID: 2
   speed: 10
 --- !u!212 &367904571
@@ -46076,8 +46075,8 @@ GameObject:
   - component: {fileID: 459856633}
   - component: {fileID: 459856632}
   m_Layer: 0
-  m_Name: Dragon
-  m_TagString: Untagged
+  m_Name: Z5
+  m_TagString: FDZ5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46136,7 +46135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 608792984}
-  globalVariables: {fileID: 991172497}
   ID: 3
   speed: 10
 --- !u!212 &459856634
@@ -46204,8 +46202,8 @@ GameObject:
   - component: {fileID: 461532614}
   - component: {fileID: 461532613}
   m_Layer: 0
-  m_Name: Dragon
-  m_TagString: Untagged
+  m_Name: Z3
+  m_TagString: FDZ3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46264,7 +46262,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 296125623}
-  globalVariables: {fileID: 991172497}
   ID: 3
   speed: 10
 --- !u!212 &461532615
@@ -46454,8 +46451,8 @@ GameObject:
   - component: {fileID: 486513620}
   - component: {fileID: 486513621}
   m_Layer: 0
-  m_Name: Troll
-  m_TagString: Untagged
+  m_Name: Z4
+  m_TagString: TZ4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46540,7 +46537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 2098762488}
-  globalVariables: {fileID: 991172497}
   ID: 1
   speed: 10
 --- !u!61 &486513621
@@ -46579,8 +46575,8 @@ GameObject:
   m_Component:
   - component: {fileID: 515651516}
   m_Layer: 0
-  m_Name: TrollEnemy (1)
-  m_TagString: Untagged
+  m_Name: EarthTroll
+  m_TagString: TZ2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46600,7 +46596,7 @@ Transform:
   - {fileID: 1179103455}
   - {fileID: 971194352}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &516872591
 GameObject:
@@ -46612,8 +46608,8 @@ GameObject:
   m_Component:
   - component: {fileID: 516872592}
   m_Layer: 0
-  m_Name: Wind Mage
-  m_TagString: Untagged
+  m_Name: WindMage
+  m_TagString: WWZ2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46633,7 +46629,7 @@ Transform:
   - {fileID: 791988176}
   - {fileID: 1686963625}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &540749676
 GameObject:
@@ -46889,8 +46885,8 @@ GameObject:
   m_Component:
   - component: {fileID: 622679393}
   m_Layer: 0
-  m_Name: Water Mage Enemy
-  m_TagString: Untagged
+  m_Name: WaterMage
+  m_TagString: WMZ1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -46910,7 +46906,7 @@ Transform:
   - {fileID: 1994191705}
   - {fileID: 259347596}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &637885306
 GameObject:
@@ -58238,8 +58234,8 @@ GameObject:
   m_Component:
   - component: {fileID: 692128985}
   m_Layer: 0
-  m_Name: Water Mage Enemy (1)
-  m_TagString: Untagged
+  m_Name: WaterMage
+  m_TagString: WMZ4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58259,7 +58255,7 @@ Transform:
   - {fileID: 1525566342}
   - {fileID: 1226335649}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &702982693
 GameObject:
@@ -58586,8 +58582,8 @@ GameObject:
   m_Component:
   - component: {fileID: 779893518}
   m_Layer: 0
-  m_Name: TrollEnemy
-  m_TagString: Untagged
+  m_Name: EarthTroll
+  m_TagString: TZ4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58607,7 +58603,7 @@ Transform:
   - {fileID: 486513619}
   - {fileID: 82528145}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &791988175
 GameObject:
@@ -58622,8 +58618,8 @@ GameObject:
   - component: {fileID: 791988179}
   - component: {fileID: 791988178}
   m_Layer: 0
-  m_Name: LightWizard
-  m_TagString: Untagged
+  m_Name: Z2
+  m_TagString: WWZ2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58734,7 +58730,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 1386716332}
-  globalVariables: {fileID: 991172497}
   ID: 2
   speed: 10
 --- !u!1 &823150523
@@ -59343,7 +59338,7 @@ Transform:
   - {fileID: 1187171476}
   - {fileID: 2026026776}
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &973389613
 MonoBehaviour:
@@ -59412,62 +59407,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 8
---- !u!1 &991172495
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 991172496}
-  - component: {fileID: 991172497}
-  m_Layer: 0
-  m_Name: Variables
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &991172496
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991172495}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.550797, y: -1.0224903, z: -0.8686624}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &991172497
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991172495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db4ea8337a745c94f813c059ddda67ae, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentEnemies:
-  - {fileID: 791988179}
-  - {fileID: 1179103457}
-  - {fileID: 486513620}
-  - {fileID: 1033367586}
-  - {fileID: 1994191707}
-  - {fileID: 1525566344}
-  - {fileID: 461532614}
-  - {fileID: 367904570}
-  - {fileID: 2058314732}
-  - {fileID: 459856633}
-  activeEnemies: 010101
 --- !u!1 &991291102
 GameObject:
   m_ObjectHideFlags: 0
@@ -59584,8 +59523,8 @@ GameObject:
   - component: {fileID: 1033367586}
   - component: {fileID: 1033367587}
   m_Layer: 0
-  m_Name: Dragon
-  m_TagString: Untagged
+  m_Name: Z1
+  m_TagString: FDZ1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59670,7 +59609,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 83958162}
-  globalVariables: {fileID: 991172497}
   ID: 3
   speed: 10
 --- !u!61 &1033367587
@@ -59876,8 +59814,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1144062497}
   m_Layer: 0
-  m_Name: DragonEnemy (1)
-  m_TagString: Untagged
+  m_Name: FireDragon
+  m_TagString: FDZ3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -59897,7 +59835,7 @@ Transform:
   - {fileID: 461532612}
   - {fileID: 2001543229}
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1147984766
 GameObject:
@@ -59957,8 +59895,8 @@ GameObject:
   - component: {fileID: 1179103457}
   - component: {fileID: 1179103456}
   m_Layer: 0
-  m_Name: Troll
-  m_TagString: Untagged
+  m_Name: Z2
+  m_TagString: TZ2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60017,7 +59955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 1313496241}
-  globalVariables: {fileID: 991172497}
   ID: 1
   speed: 10
 --- !u!212 &1179103458
@@ -60949,8 +60886,8 @@ GameObject:
   - component: {fileID: 1525566344}
   - component: {fileID: 1525566343}
   m_Layer: 0
-  m_Name: DarkWizard
-  m_TagString: Untagged
+  m_Name: Z4
+  m_TagString: WMZ4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61009,7 +60946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 342985304}
-  globalVariables: {fileID: 991172497}
   ID: 0
   speed: 10
 --- !u!212 &1525566345
@@ -62462,8 +62398,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1965634220}
   m_Layer: 0
-  m_Name: Wind Mage (1)
-  m_TagString: Untagged
+  m_Name: WindMage
+  m_TagString: WWZ3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62483,7 +62419,7 @@ Transform:
   - {fileID: 367904568}
   - {fileID: 383939338}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1977300791
 GameObject:
@@ -62588,8 +62524,8 @@ GameObject:
   - component: {fileID: 1994191707}
   - component: {fileID: 1994191708}
   m_Layer: 0
-  m_Name: DarkWizard
-  m_TagString: Untagged
+  m_Name: Z1
+  m_TagString: WMZ1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -62674,7 +62610,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 761322868}
-  globalVariables: {fileID: 991172497}
   ID: 0
   speed: 10
 --- !u!61 &1994191708
@@ -62995,8 +62930,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2024166050}
   m_Layer: 0
-  m_Name: DragonEnemy
-  m_TagString: Untagged
+  m_Name: FireDragon
+  m_TagString: FDZ1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63016,7 +62951,7 @@ Transform:
   - {fileID: 1033367584}
   - {fileID: 135369939}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2026026775
 GameObject:
@@ -63108,8 +63043,8 @@ GameObject:
   - component: {fileID: 2058314732}
   - component: {fileID: 2058314731}
   m_Layer: 0
-  m_Name: Troll
-  m_TagString: Untagged
+  m_Name: Z5
+  m_TagString: TZ5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63168,7 +63103,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nuevoCamino: {fileID: 834688863}
-  globalVariables: {fileID: 991172497}
   ID: 1
   speed: 10
 --- !u!212 &2058314733

@@ -99,8 +99,11 @@ public class GameManager : MonoBehaviour
     private IEnumerator TimeBetweenTurns()
     {
         yield return new WaitForSeconds(2f);
+
         EventsManager.Instance.DispatchSimpleEvent(eventID);
+
         ChargeManaPoints();
+
         if (playerRef.CheckIfThereIsSpaceInHand())
         {
             playerRef.DrawACard();
@@ -119,25 +122,29 @@ public class GameManager : MonoBehaviour
 
         playerRef.CanPlay = true;
 
-        if (_enemies.EmptyStack())
-            ScreenManager.Instance.StartGame();
-            
-
         _enemyKilled++;
+        GlobalVariables.enemiesKilled++;
 
-        if(!_enemies.EmptyStack())
+        if (_enemies.EmptyStack())
+            ScreenManager.Instance.ReturnToMap();
+        else
+        {
             _enemies.SpawnNextEnemy();
+        }
             
-
+            
 
         if(playerRef.startManaCount < playerRef.ManaTotal)
             playerRef.startManaCount++;
 
         playerCurrentMana = playerRef.startManaCount;
+
         ChargeManaPoints();
 
         if (_enemyKilled == 2)
             EventsManager.Instance.DispatchSimpleEvent(ChangePlayerDeckEventID);
+
+        StopCoroutine(TimeBetweenEnemies());
             
     }
     
