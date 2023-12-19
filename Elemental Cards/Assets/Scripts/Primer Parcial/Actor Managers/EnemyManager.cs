@@ -31,7 +31,7 @@ public class EnemyManager : Actor, IListener, IProduct
 
     private void Update()
     {
-    
+     
     }
 
     public override void TakeDamage(float damage, ElementalPower element)
@@ -66,6 +66,8 @@ public class EnemyManager : Actor, IListener, IProduct
     {
         GameObject aux = Instantiate(Spell, new Vector3(transform.position.x, transform.position.y + 4f, 0f), transform.rotation);
 
+        aux.transform.eulerAngles = new Vector3(0, 0, -110);
+
         yield return new WaitForSeconds(.2f);
 
         while (aux.transform.position.x > -5f)
@@ -81,6 +83,7 @@ public class EnemyManager : Actor, IListener, IProduct
             if (_stats.Power == GameManager.Instance.ElementalPowers[i])
             {
                 Debug.Log($"Enemy threw {_stats.Power} ball");
+                Debug.Log(_playerRef.ElementalShield);
                 if (_playerRef.ElementalShield != _stats.Power)
                 {
                     EventQueueManager.Instance.AddEvents(_enemyAttack);

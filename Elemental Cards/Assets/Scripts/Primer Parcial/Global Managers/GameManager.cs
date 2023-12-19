@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     public List<EnemyManager> availableEnemies = new();
     public string ManaPlayerEventID;
     public int EnemyKilled => _enemyKilled;
+    public GameObject enemyTurn;
+    public GameObject PlayerTurn;
 
     [SerializeField] private PlayerManager playerRef;
     [SerializeField] private string eventID;
@@ -61,9 +63,16 @@ public class GameManager : MonoBehaviour
         if(playerRef.CanPlay)
         {
             _endTurnButton.SetActive(true);
+            PlayerTurn.SetActive(true);
+            enemyTurn.SetActive(false);
         }
         else
+        {
             _endTurnButton.SetActive(false);
+            PlayerTurn.SetActive(false);
+            enemyTurn.SetActive(true);
+        }
+            
     }
 
     public void ChargeManaPoints()

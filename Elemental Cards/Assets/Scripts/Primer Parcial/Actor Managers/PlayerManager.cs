@@ -17,6 +17,8 @@ public class PlayerManager : Actor, IListener
     [SerializeField] private string ManaEventID;
     [SerializeField] private string ChangeDeckID;
     [SerializeField] private CardStack _cardStack;
+    [SerializeField] private ElementalPower fire;
+    [SerializeField] private ElementalPower wind;
     private ElementalPower _elementalShield;
     private int _shieldedDamage;
     public GameObject shield;
@@ -102,6 +104,9 @@ public class PlayerManager : Actor, IListener
             {
                 GameObject aux = Instantiate(spellCasted.spell, new Vector3(transform.position.x, transform.position.y + 4f, 0f), transform.rotation);
 
+                if(spellCasted._stats.Element != wind)
+                    aux.transform.eulerAngles = new Vector3(0, 0, -110);
+
                 while (aux.transform.position.x < 5f)
                 {
                     yield return new WaitForSeconds(.025f);
@@ -122,6 +127,7 @@ public class PlayerManager : Actor, IListener
 
                 _elementalShield = spellCasted._stats.Element;
                 _shieldedDamage = spellCasted._stats.Protection;
+                Debug.Log(_elementalShield);
             }
         }
 
