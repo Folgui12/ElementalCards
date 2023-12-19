@@ -7,6 +7,7 @@ public class EnemyManager : Actor, IListener, IProduct
 {
     public ElementalPower Weakness;
     public ElementalPower Resistance;
+    public GameObject Spell;
     private float _extraDamageTakenCauseWeakness = 2;
     [SerializeField] private string _eventID;
     [SerializeField] private int _damage;
@@ -58,23 +59,44 @@ public class EnemyManager : Actor, IListener, IProduct
 
     private void CastSpellToPlayer()
     {
-        for(int i = 0; i < GameManager.Instance.ElementalPowers.Count; i++)
+        StartCoroutine(SpellCasting());
+    }
+
+    private IEnumerator SpellCasting()
+    {
+        GameObject aux = Instantiate(Spell, new Vector3(transform.position.x, transform.position.y + 4f, 0f), transform.rotation);
+
+        yield return new WaitForSeconds(.2f);
+
+        while (aux.transform.position.x > -5f)
         {
-            if(_stats.Power == GameManager.Instance.ElementalPowers[i])
+            yield return new WaitForSeconds(.025f);
+            aux.transform.position -= new Vector3(.5f, .1f, 0);
+        }
+
+        Destroy(aux);
+
+        for (int i = 0; i < GameManager.Instance.ElementalPowers.Count; i++)
+        {
+            if (_stats.Power == GameManager.Instance.ElementalPowers[i])
             {
                 Debug.Log($"Enemy threw {_stats.Power} ball");
                 if (_playerRef.ElementalShield != _stats.Power)
                 {
                     EventQueueManager.Instance.AddEvents(_enemyAttack);
+                    Destroy(_playerRef.shield);
                 }
-                else if(_playerRef.ElementalShield == _stats.Power)
+                else if (_playerRef.ElementalShield == _stats.Power)
                 {
                     _enemyAttack.UnDo();
+                    Destroy(_playerRef.shield);
                 }
-                return; 
             }
         }
+
     }
+
+
 
     public void OnEventDispatch()
     {

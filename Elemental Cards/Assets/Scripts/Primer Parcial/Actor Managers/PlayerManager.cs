@@ -19,6 +19,7 @@ public class PlayerManager : Actor, IListener
     [SerializeField] private CardStack _cardStack;
     private ElementalPower _elementalShield;
     private int _shieldedDamage;
+    public GameObject shield;
     private ChangeDeckListener _deckChanger;
 
     private void Awake()
@@ -88,20 +89,44 @@ public class PlayerManager : Actor, IListener
 
     public void EndTurn()
     {
+        StartCoroutine(SpellCasting());
+    }
+
+    private IEnumerator SpellCasting()
+    {
         while (!_spellsQueue.EmptyQueue())
         {
-            Card cartaLanzada = _spellsQueue.Dequeue();
-            if (cartaLanzada._stats.Damage > 0)
+            Card spellCasted = _spellsQueue.Dequeue();
+
+            if (spellCasted._stats.Damage > 0)
             {
-                EventQueueManager.Instance.AddEvents(new CmdtakeDamage(FindObjectOfType<EnemyManager>(), cartaLanzada._stats.Damage, cartaLanzada._stats.Element));
+                GameObject aux = Instantiate(spellCasted.spell, new Vector3(transform.position.x, transform.position.y + 4f, 0f), transform.rotation);
+
+                while (aux.transform.position.x < 5f)
+                {
+                    yield return new WaitForSeconds(.025f);
+                    aux.transform.position += new Vector3(.5f, -.1f, 0);
+                }
+
+                Destroy(aux);
+
+                EnemyManager currentEnemy = FindObjectOfType<EnemyManager>();
+
+                if(currentEnemy != null)
+                    EventQueueManager.Instance.AddEvents(new CmdtakeDamage(currentEnemy, spellCasted._stats.Damage, spellCasted._stats.Element));
             }
+
             else
             {
-                _elementalShield = cartaLanzada._stats.Element;
-                _shieldedDamage = cartaLanzada._stats.Protection;
+                shield = Instantiate(spellCasted.spell, new Vector3(transform.position.x + 1f, transform.position.y + 1f, 0f), transform.rotation);
+
+                _elementalShield = spellCasted._stats.Element;
+                _shieldedDamage = spellCasted._stats.Protection;
             }
         }
+
         CanPlay = false;
+        
     }
 
     public void DrawACard()

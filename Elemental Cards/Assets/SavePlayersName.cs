@@ -17,6 +17,6 @@ public class SavePlayersName : MonoBehaviour
     public void CreateNewScore()
     {
         GlobalVariables.playerName = inputField.text;
-        ScreenManager.Instance.ShowScoreBoard();
+        GlobalVariables.Instance.CreateNewHighScore();
     }
 }

@@ -946,3 +946,4 @@ MonoBehaviour:
   ElementImage: {fileID: 0}
   _stats: {fileID: 11400000, guid: 14edb8eede71309478f8e13dddfbce9c, type: 2}
   handIndex: 0
+  spell: {fileID: 8473637568994308816, guid: 345789eb9c4506342bcf81ad1fce7681, type: 3}

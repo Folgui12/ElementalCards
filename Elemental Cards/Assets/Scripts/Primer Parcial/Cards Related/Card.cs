@@ -5,7 +5,8 @@ public class Card : MonoBehaviour, IProduct
 {
     public Image ElementImage;
     public CardStats _stats;
-    public int handIndex; 
+    public int handIndex;
+    public GameObject spell;
 
     private Animator _animator;
     private bool _useCard = false;

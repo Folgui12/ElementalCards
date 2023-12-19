@@ -314,6 +314,7 @@ MonoBehaviour:
   _stats: {fileID: 11400000, guid: f0955c34f873eea438ed9527a9e15dd9, type: 2}
   Weakness: {fileID: 11400000, guid: 152ef941870a10a48bf41d70e2f1554d, type: 2}
   Resistance: {fileID: 11400000, guid: 37bd5207428fe8b45a43beb7e8813832, type: 2}
+  Spell: {fileID: 8473637568994308816, guid: 345789eb9c4506342bcf81ad1fce7681, type: 3}
   _eventID: EnemyAttack
   _damage: 30
 --- !u!1 &6456586772647914965

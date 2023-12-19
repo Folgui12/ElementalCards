@@ -16,6 +16,8 @@ TagManager:
   - TZ5
   - highScoreEntryContainer
   - highScoreEntryTemplate
+  - inputField
+  - Ok
   layers:
   - Default
   - TransparentFX

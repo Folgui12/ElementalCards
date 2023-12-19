@@ -5,45 +5,27 @@ using UnityEngine.UI;
 
 public class HighScoreTable : MonoBehaviour
 {
-    public static HighScoreTable Instance;
     private Transform entryContainer;
     private Transform entryTemplate;
-    private static List<HighscoreEntry> highscoreEntryList;
-    private static List<Transform> highscoreEntryTransformList;
+    private List<Transform> highscoreEntryTransformList;
 
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else if (Instance != this)
-        {
-            Destroy(gameObject);
-        }
-
-        highscoreEntryList = new List<HighscoreEntry>();
         entryContainer = GameObject.FindGameObjectWithTag("highScoreEntryContainer").transform;
         entryTemplate = entryContainer.Find("highScoreEntryTemplate");
 
         entryTemplate.gameObject.SetActive(false);
 
-        HighscoreEntry newScore = new HighscoreEntry { score = GlobalVariables.enemiesKilled * 10, name = GlobalVariables.playerName };
+        QuickSort(GlobalVariables.highscoreEntryList, 0, GlobalVariables.highscoreEntryList.Count - 1);
 
-        highscoreEntryList.Add(newScore);
-
-        QuickSort(highscoreEntryList, 0, highscoreEntryList.Count - 1);
-
-        Debug.Log(highscoreEntryList.Count);
+        Debug.Log(GlobalVariables.highscoreEntryList.Count);
 
         highscoreEntryTransformList = new List<Transform>();
 
-        for (int i = highscoreEntryList.Count - 1; i >= 0; i--)
+        for (int i = GlobalVariables.highscoreEntryList.Count - 1; i >= 0; i--)
         {
-            CreateHighscoreEntryTransform(highscoreEntryList[i], entryContainer, highscoreEntryTransformList);
+            CreateHighscoreEntryTransform(GlobalVariables.highscoreEntryList[i], entryContainer, highscoreEntryTransformList);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void CreateHighscoreEntryTransform(HighscoreEntry entry, Transform container, List<Transform> transformList)
@@ -126,11 +108,5 @@ public class HighScoreTable : MonoBehaviour
             else
                 return right;
         }
-    }
-    
-    private class HighscoreEntry
-    {
-        public int score;
-        public string name;
     }
 }

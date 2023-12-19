@@ -701,6 +701,7 @@ MonoBehaviour:
   ElementImage: {fileID: 0}
   _stats: {fileID: 11400000, guid: 140f84ef479ea6949872a9653ef9126c, type: 2}
   handIndex: 0
+  spell: {fileID: 6616589534106535200, guid: 9503eb1f34d9ade4cbc927f970d473c6, type: 3}
 --- !u!1 &6837870319761562086
 GameObject:
   m_ObjectHideFlags: 0

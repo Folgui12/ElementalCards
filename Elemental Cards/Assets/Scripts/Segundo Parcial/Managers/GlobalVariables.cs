@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 
 public class GlobalVariables : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class GlobalVariables : MonoBehaviour
     public static string playerName;
     public static int deactivatedAreas = 0;
     public List<string> enemiesTags = new List<string>();
+    public static List<HighscoreEntry> highscoreEntryList = new List<HighscoreEntry>();
 
     private void Awake()
     {
@@ -71,5 +71,14 @@ public class GlobalVariables : MonoBehaviour
         enemiesKilled = 0;
         deactivatedAreas = 0;
         enemiesTags.Clear();
+    }
+
+    public void CreateNewHighScore()
+    {
+        HighscoreEntry newScore = new HighscoreEntry { score = enemiesKilled * 10, name = playerName };
+
+        highscoreEntryList.Add(newScore);
+
+        ScreenManager.Instance.ShowScoreBoard();
     }
 }

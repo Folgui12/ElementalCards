@@ -586,6 +586,7 @@ MonoBehaviour:
   ElementImage: {fileID: 0}
   _stats: {fileID: 11400000, guid: a4a8dd7e1bfd82c46ae69c6f778c56bc, type: 2}
   handIndex: 0
+  spell: {fileID: 8473637568994308816, guid: 345789eb9c4506342bcf81ad1fce7681, type: 3}
 --- !u!1 &5426875924544149935
 GameObject:
   m_ObjectHideFlags: 0

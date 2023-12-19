@@ -1119,6 +1119,7 @@ MonoBehaviour:
   ElementImage: {fileID: 0}
   _stats: {fileID: 11400000, guid: 6673bccf3ddfd0544b92f3b4e11a8812, type: 2}
   handIndex: 0
+  spell: {fileID: 634277064326339744, guid: 7457d55635cb210489f1116f4c9ab186, type: 3}
 --- !u!95 &8943015579034409195
 Animator:
   serializedVersion: 5

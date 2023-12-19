@@ -114,6 +114,8 @@ public class GameManager : MonoBehaviour
         }
         else
             Debug.Log("Can't draw another card, hand's full");
+
+        StopCoroutine(TimeBetweenTurns());
     }
 
     private IEnumerator TimeBetweenEnemies()
