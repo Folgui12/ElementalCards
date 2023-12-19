@@ -18,8 +18,6 @@ public class HighScoreTable : MonoBehaviour
 
         QuickSort(GlobalVariables.highscoreEntryList, 0, GlobalVariables.highscoreEntryList.Count - 1);
 
-        Debug.Log(GlobalVariables.highscoreEntryList.Count);
-
         highscoreEntryTransformList = new List<Transform>();
 
         for (int i = GlobalVariables.highscoreEntryList.Count - 1; i >= 0; i--)

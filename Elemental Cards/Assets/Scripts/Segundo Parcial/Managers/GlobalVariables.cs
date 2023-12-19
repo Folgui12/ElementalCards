@@ -66,7 +66,6 @@ public class GlobalVariables : MonoBehaviour
 
     public void Restore()
     {
-        Debug.Log("Restoring");
         confrontedEnemies = 0;
         enemiesKilled = 0;
         deactivatedAreas = 0;

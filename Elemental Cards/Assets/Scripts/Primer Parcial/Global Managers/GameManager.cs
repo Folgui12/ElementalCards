@@ -123,8 +123,6 @@ public class GameManager : MonoBehaviour
         }
         else
             Debug.Log("Can't draw another card, hand's full");
-
-        StopCoroutine(TimeBetweenTurns());
     }
 
     private IEnumerator TimeBetweenEnemies()
@@ -154,8 +152,6 @@ public class GameManager : MonoBehaviour
 
         if (_enemyKilled == 2)
             EventsManager.Instance.DispatchSimpleEvent(ChangePlayerDeckEventID);
-
-        StopCoroutine(TimeBetweenEnemies());
             
     }
     

@@ -17,6 +17,8 @@ public class EnemyManager : Actor, IListener, IProduct
     private void Start()
     {
         EventsManager.Instance.AddListener(_eventID, this);
+        Debug.Log("Listener Added");
+
         _showCurrentLife = GetComponentInChildren<Slider>();
 
         _showCurrentLife.maxValue = _stats.MaxLife;
@@ -64,6 +66,7 @@ public class EnemyManager : Actor, IListener, IProduct
 
     private IEnumerator SpellCasting()
     {
+        Debug.Log("HOLA");
         GameObject aux = Instantiate(Spell, new Vector3(transform.position.x, transform.position.y + 4f, 0f), transform.rotation);
 
         aux.transform.eulerAngles = new Vector3(0, 0, -110);
@@ -83,7 +86,6 @@ public class EnemyManager : Actor, IListener, IProduct
             if (_stats.Power == GameManager.Instance.ElementalPowers[i])
             {
                 Debug.Log($"Enemy threw {_stats.Power} ball");
-                Debug.Log(_playerRef.ElementalShield);
                 if (_playerRef.ElementalShield != _stats.Power)
                 {
                     EventQueueManager.Instance.AddEvents(_enemyAttack);

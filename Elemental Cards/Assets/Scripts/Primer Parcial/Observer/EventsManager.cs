@@ -34,6 +34,7 @@ public class EventsManager
 
     public void DispatchSimpleEvent(string eventID)
     {
+        
         if (simpleEvents.TryGetValue(eventID, out var listeners))
         {
             foreach (var listener in listeners)
@@ -46,6 +47,9 @@ public class EventsManager
     public void RegisterEvents(string eventID)
     {
         if(!simpleEvents.ContainsKey(eventID))
+        {
             simpleEvents[eventID] = new List<IListener>();
+        }
+            
     }
 }
