@@ -36,12 +36,13 @@ public class Card : MonoBehaviour, IProduct
 
     private void OnMouseDown()
     {
-        if(_playerRef.CanPlay)
+        if (_playerRef.CanPlay)
         {
             if (!_playerRef._spellsQueue.FullQueue())
             {
                 if (_playerRef.CurrentMana >= _stats.Cost)
                 {
+                    gameObject.GetComponent<Collider2D>().enabled = false;
                     _playerRef.PlayCard(this);
                     GameManager.Instance.UpdateMana(_stats.Cost);
                     _playerRef.CurrentMana -= _stats.Cost;
